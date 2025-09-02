@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --primary:#c34d54;
+  --bg:#ffffff;
+}
+
+html,body,#root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+}
+
+a {
+  transition: all .2s;
+}
+
+/* Helpers for this header */
+@layer components {
+  .btn-light {
+    @apply px-4 py-2 rounded-xl bg-white text-primary font-medium hover:opacity-90;
+  }
+  .btn-light-outline {
+    @apply px-4 py-2 rounded-xl border border-white/60 text-white hover:bg-white/10;
+  }
+  .drawer-link {
+    @apply px-3 py-2 rounded-lg hover:bg-white/10;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
