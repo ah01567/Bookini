@@ -38,7 +38,7 @@ const UserIcon = ({ className = "w-5 h-5 text-slate-500" }) => (
   </Icon>
 );
 
-export default function SearchBar() {
+export default function SearchBar({ variant = "overlay" }) {
   const nav = useNavigate();
   const [destination, setDestination] = useState("");
   const [dates, setDates] = useState({ in: "", out: "" });
@@ -59,8 +59,11 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={submit} className="mx-auto w-full max-w-6xl -mt-12">
-      <div className="flex flex-col md:flex-row gap-2 p-2 bg-white rounded-2xl border-2 border-primary shadow-lg">
+    <form
+      onSubmit={submit}
+      className={`mx-auto w-full max-w-6xl ${variant === "overlay" ? "-mt-12" : "mt-0"}`}
+    >
+      <div className="flex flex-col md:flex-row gap-2 p-2 bg-white rounded-3xl border-2 border-primary shadow-lg">
         {/* Destination */}
         <div className="flex-1 flex items-center gap-3 px-3 py-3 rounded-xl bg-white">
           <BedIcon />
@@ -139,7 +142,7 @@ export default function SearchBar() {
         </div>
 
         {/* CTA */}
-        <button className="px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:opacity-90">
+        <button className="px-6 py-3 rounded-3xl bg-primary text-white font-semibold hover:opacity-90">
           Rechercher
         </button>
       </div>

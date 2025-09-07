@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
+import 'leaflet/dist/leaflet.css';
 
 import ErrorBoundary from "./ErrorBoundary";
 import AuthProvider from "./context/AuthContext";
